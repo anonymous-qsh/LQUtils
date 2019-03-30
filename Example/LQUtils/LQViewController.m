@@ -14,16 +14,26 @@
 
 @implementation LQViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  // Do any additional setup after loading the view, typically from a nib.
+  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, LQ_SCREEN_WIDTH, LQ_SCREEN_HEIGHT)];
+  view.backgroundColor = [UIColor blueColor];
+  [self.view addSubview:view];
+
+  UIView *statusBar = [[UIView alloc]
+      initWithFrame:CGRectMake(0, 0, LQ_SCREEN_WIDTH, LQ_STATUS_BAR_HEIGHT)];
+
+  statusBar.backgroundColor = [UIColor redColor];
+
+  [view addSubview:statusBar];
+  // not complete.
+  LQ_VIEW_SAFE_ARE_INSETS(view);
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)didReceiveMemoryWarning {
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 @end
